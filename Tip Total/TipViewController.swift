@@ -82,10 +82,13 @@ class TipViewController: UIViewController {
                 //fade out all other fields
                 UIView.animate(withDuration: 0.4, animations: {
                     
-                    let offset = self.view.frame.height/5
-                    self.AmountField.alpha = 1
-                    self.AmountField.frame.origin.y += offset
-                    self.AmountLabel.frame.origin.y += offset
+                    let y_offset = self.view.frame.height/5
+                    let x_offset = self.view.frame.width/4
+                    
+                    self.AmountField.frame.origin.x -= x_offset
+                    
+                    self.AmountField.frame.origin.y += y_offset
+                    self.AmountLabel.frame.origin.y += y_offset
                     
                     self.TipTotalView.frame.origin.y += 400
                     self.TipTotalView.alpha = 0
@@ -98,8 +101,6 @@ class TipViewController: UIViewController {
         let defaults = UserDefaults.standard
         tipPercentSegment.selectedSegmentIndex = defaults.integer(forKey: "tipIndex")
         self.calculateTip()
-        
-       
         
         AmountField.becomeFirstResponder()
     }
@@ -123,10 +124,13 @@ class TipViewController: UIViewController {
                 //fade out all other fields
                 UIView.animate(withDuration: 0.4, animations: {
                     
-                    let offset = self.view.frame.height/5
-                    self.AmountField.alpha = 1
-                    self.AmountField.frame.origin.y += offset
-                    self.AmountLabel.frame.origin.y += offset
+                    let y_offset = self.view.frame.height/5
+                    let x_offset = self.view.frame.width/4
+                    
+                    self.AmountField.frame.origin.x -= x_offset
+
+                    self.AmountField.frame.origin.y += y_offset
+                    self.AmountLabel.frame.origin.y += y_offset
                     
                     self.TipTotalView.frame.origin.y += 400
                     self.TipTotalView.alpha = 0
@@ -141,10 +145,13 @@ class TipViewController: UIViewController {
             {
                 UIView.animate(withDuration: 0.4, animations: {
                     
-                    let offset = self.view.frame.height/5
-                    self.AmountField.alpha = 1
-                    self.AmountField.frame.origin.y -= offset
-                    self.AmountLabel.frame.origin.y -= offset
+                    let y_offset = self.view.frame.height/5
+                    let x_offset = self.view.frame.width/4
+                    
+                    self.AmountField.frame.origin.x += x_offset
+
+                    self.AmountField.frame.origin.y -= y_offset
+                    self.AmountLabel.frame.origin.y -= y_offset
                     
                     self.TipTotalView.frame.origin.y -= 400
                     self.TipTotalView.alpha = 1
