@@ -15,7 +15,6 @@
 		92CC4BC31E66A7FA0058059F /* Tip_TotalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC4BC21E66A7FA0058059F /* Tip_TotalTests.swift */; };
 		92CC4BCE1E66A7FA0058059F /* Tip_TotalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC4BCD1E66A7FA0058059F /* Tip_TotalUITests.swift */; };
 		92CC4BDC1E6AA7460058059F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC4BDB1E6AA7460058059F /* SettingsViewController.swift */; };
-		92CC4BDE1E6CEE340058059F /* prework_readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 92CC4BDD1E6CEE340058059F /* prework_readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +49,6 @@
 		92CC4BCD1E66A7FA0058059F /* Tip_TotalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip_TotalUITests.swift; sourceTree = "<group>"; };
 		92CC4BCF1E66A7FA0058059F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92CC4BDB1E6AA7460058059F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		92CC4BDD1E6CEE340058059F /* prework_readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = prework_readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +79,6 @@
 		92CC4BA11E66A7FA0058059F = {
 			isa = PBXGroup;
 			children = (
-				92CC4BDD1E6CEE340058059F /* prework_readme.md */,
 				92CC4BAC1E66A7FA0058059F /* Tip Total */,
 				92CC4BC11E66A7FA0058059F /* Tip TotalTests */,
 				92CC4BCC1E66A7FA0058059F /* Tip TotalUITests */,
@@ -271,7 +268,6 @@
 				92CC4BB01E66A7FA0058059F /* TipViewController.swift in Sources */,
 				92CC4BAE1E66A7FA0058059F /* AppDelegate.swift in Sources */,
 				92CC4BDC1E6AA7460058059F /* SettingsViewController.swift in Sources */,
-				92CC4BDE1E6CEE340058059F /* prework_readme.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +518,7 @@
 				92CC4BD41E66A7FA0058059F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		92CC4BD51E66A7FA0058059F /* Build configuration list for PBXNativeTarget "Tip TotalTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +527,7 @@
 				92CC4BD71E66A7FA0058059F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		92CC4BD81E66A7FA0058059F /* Build configuration list for PBXNativeTarget "Tip TotalUITests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +536,7 @@
 				92CC4BDA1E66A7FA0058059F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

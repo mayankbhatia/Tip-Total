@@ -10,11 +10,15 @@ import UIKit
 
 class TipViewController: UIViewController {
 
+    @IBOutlet weak var AmountLabel: UILabel!
     @IBOutlet weak var AmountField: UITextField!
     
+    @IBOutlet weak var TipTotalView: UIView!
     @IBOutlet weak var TipLabel: UILabel!
+    @IBOutlet weak var TipAmount: UILabel!
     
     @IBOutlet weak var TotalLabel: UILabel!
+    @IBOutlet weak var TotalAmount: UILabel!
     
     @IBOutlet weak var tipPercentSegment: UISegmentedControl!
     
@@ -70,10 +74,34 @@ class TipViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if (AmountField.text?.isEmpty)!
+        {
+            if (self.TipTotalView.alpha == 1)
+            {
+                //fade out all other fields
+                UIView.animate(withDuration: 0.4, animations: {
+                    
+                    let y_offset = self.view.frame.height/5
+                    let x_offset = self.view.frame.width/4
+                    
+                    self.AmountField.frame.origin.x -= x_offset
+                    
+                    self.AmountField.frame.origin.y += y_offset
+                    self.AmountLabel.frame.origin.y += y_offset
+                    
+                    self.TipTotalView.frame.origin.y += 400
+                    self.TipTotalView.alpha = 0
+                })
+            }
+        }
+        
+        
         //set default tip
         let defaults = UserDefaults.standard
         tipPercentSegment.selectedSegmentIndex = defaults.integer(forKey: "tipIndex")
         self.calculateTip()
+        
         AmountField.becomeFirstResponder()
     }
     
@@ -90,10 +118,45 @@ class TipViewController: UIViewController {
         if (amount == 0)
         {
             AmountField.placeholder = formatter.currencySymbol
+            
+            if (self.TipTotalView.alpha == 1)
+            {
+                //fade out all other fields
+                UIView.animate(withDuration: 0.4, animations: {
+                    
+                    let y_offset = self.view.frame.height/5
+                    let x_offset = self.view.frame.width/4
+                    
+                    self.AmountField.frame.origin.x -= x_offset
+
+                    self.AmountField.frame.origin.y += y_offset
+                    self.AmountLabel.frame.origin.y += y_offset
+                    
+                    self.TipTotalView.frame.origin.y += 400
+                    self.TipTotalView.alpha = 0
+                })
+            }
         }
         else
         {
             AmountField.text = currencyString
+            
+            if (self.TipTotalView.alpha == 0)
+            {
+                UIView.animate(withDuration: 0.4, animations: {
+                    
+                    let y_offset = self.view.frame.height/5
+                    let x_offset = self.view.frame.width/4
+                    
+                    self.AmountField.frame.origin.x += x_offset
+
+                    self.AmountField.frame.origin.y -= y_offset
+                    self.AmountLabel.frame.origin.y -= y_offset
+                    
+                    self.TipTotalView.frame.origin.y -= 400
+                    self.TipTotalView.alpha = 1
+                })
+            }
         }
         
         let tipPercent = [15, 18, 20]
@@ -105,12 +168,14 @@ class TipViewController: UIViewController {
         formatter.numberStyle = NumberFormatter.Style.currency
 
         currencyString = "\(formatter.string(from: tempNumber)!)"
-        TipLabel.text = currencyString
+        TipAmount.text = currencyString
         
         let total = (amount + tip) as NSNumber
         currencyString = "\(formatter.string(from: total)!)"
-        TotalLabel.text = currencyString
+        TotalAmount.text = currencyString
         
+    
+
         //Save amount to load later
         
         let defaults = UserDefaults.standard
