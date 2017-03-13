@@ -33,17 +33,18 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-Required:
-User can enter a bill amount, choose a tip percentage, and see the tip and total values.
-Settings page to change the default tip percentage.
+Required:<br />
+User can enter a bill amount, choose a tip percentage, and see the tip and total values.<br />
+Settings page to change the default tip percentage and color theme.
 
 <img src='https://github.com/mayankbhatia/Tip-Total/blob/master/Bill%20Amount%20%2B%20Settings%20%2B%20Animations.gif' title='Video Walkthrough [Required]' width='' alt='Video Walkthrough [Required]' />
 
-Optional:
-Making sure the keyboard is always visible and the bill amount is always the first responder.
-Using locale-specific currency and currency thousands separators.
-Remembering the bill amount across app restarts (if <10mins).
-UI look of an actual credit card signing slip.
+Optional:<br />
+Making sure the keyboard is always visible and the bill amount is always the first responder.<br />
+Using locale-specific currency and currency thousands separators.<br />
+Remembering the bill amount across app restarts (if <10mins).<br />
+UI look of an actual credit card signing slip.<br />
+A professional looking icon<br />
 
 <img src='https://github.com/mayankbhatia/Tip-Total/blob/master/Locale%20Currency%20%2B%20Save%20Across%20Restarts%20%2B%20Icon.gif' title='Video Walkthrough [Optional]' width='' alt='Video Walkthrough [Optional]' />
 
