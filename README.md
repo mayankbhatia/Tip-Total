@@ -17,6 +17,7 @@ The following **required** functionality is complete:
 * [√] Settings page to change the default tip percentage.
 
 The following **optional** features are implemented:
+* [√] UI Animations
 * [√] Remembering the bill amount across app restarts (if <10mins)
 * [√] Using locale-specific currency and currency thousands separators.
 * [√] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
@@ -25,6 +26,7 @@ The following **additional** features are implemented:
 
 * [√] Make UI look like an actual receipt to include tip
 * [√] Include an icon for the app
+* [√] Dark/Light Settings Theme
 
 
 ## Video Walkthrough 
@@ -35,7 +37,7 @@ Required:
 User can enter a bill amount, choose a tip percentage, and see the tip and total values.
 Settings page to change the default tip percentage.
 
-<img src='https://github.com/mayankbhatia/Tip-Total/blob/master/Bill%20Amount%20%2B%20Settings.gif' title='Video Walkthrough [Required]' width='' alt='Video Walkthrough [Required]' />
+<img src='https://github.com/mayankbhatia/Tip-Total/blob/master/Bill%20Amount%20%2B%20Settings%20%2B%20Animations.gif' title='Video Walkthrough [Required]' width='' alt='Video Walkthrough [Required]' />
 
 Optional:
 Making sure the keyboard is always visible and the bill amount is always the first responder.
@@ -43,7 +45,7 @@ Using locale-specific currency and currency thousands separators.
 Remembering the bill amount across app restarts (if <10mins).
 UI look of an actual credit card signing slip.
 
-<img src='https://github.com/mayankbhatia/Tip-Total/blob/master/Locale%20Currency%20%2B%20Save%20Across%20Restarts.gif' title='Video Walkthrough [Optional]' width='' alt='Video Walkthrough [Optional]' />
+<img src='https://github.com/mayankbhatia/Tip-Total/blob/master/Locale%20Currency%20%2B%20Save%20Across%20Restarts%20%2B%20Icon.gif' title='Video Walkthrough [Optional]' width='' alt='Video Walkthrough [Optional]' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
