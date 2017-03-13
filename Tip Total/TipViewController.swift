@@ -16,11 +16,16 @@ class TipViewController: UIViewController {
     @IBOutlet weak var TipTotalView: UIView!
     @IBOutlet weak var TipLabel: UILabel!
     @IBOutlet weak var TipAmount: UILabel!
+    @IBOutlet weak var TipUnderlineLabel: UILabel!
+    
     
     @IBOutlet weak var TotalLabel: UILabel!
     @IBOutlet weak var TotalAmount: UILabel!
+    @IBOutlet weak var TotalUnderlineLabel: UILabel!
     
     @IBOutlet weak var tipPercentSegment: UISegmentedControl!
+    
+    @IBOutlet var TipTotalCollection: [UIView]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +80,56 @@ class TipViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        //select correct color theme
+        let defaults = UserDefaults.standard
+        let colorTheme = defaults.integer(forKey: "colorTheme")
+        
+        //if light
+        if (colorTheme == 0)
+        {
+            self.view.tintColor = UIColor.black
+            self.view.backgroundColor = UIColor.white
+
+            
+            for myView in TipTotalCollection
+            {
+                if let aLabel = myView as? UILabel
+                {
+                    aLabel.textColor = UIColor.black
+                }
+                else if let aLabel = myView as? UITextField
+                {
+                    aLabel.textColor = UIColor.black
+                }
+
+                // Apply your styles
+                myView.tintColor = UIColor.black
+                myView.backgroundColor = UIColor.white
+            }
+            
+        }
+        else //dark
+        {
+            self.view.tintColor = UIColor.white
+            self.view.backgroundColor = UIColor.black
+            
+            for myView in TipTotalCollection
+            {
+                if let aLabel = myView as? UILabel
+                {
+                    aLabel.textColor = UIColor.white
+                }
+                else if let aLabel = myView as? UITextField
+                {
+                    aLabel.textColor = UIColor.white
+                }
+                
+                myView.tintColor = UIColor.white
+                myView.backgroundColor = UIColor.black
+            }
+
+        }
+        
         if (AmountField.text?.isEmpty)!
         {
             if (self.TipTotalView.alpha == 1)
@@ -98,7 +153,6 @@ class TipViewController: UIViewController {
         
         
         //set default tip
-        let defaults = UserDefaults.standard
         tipPercentSegment.selectedSegmentIndex = defaults.integer(forKey: "tipIndex")
         self.calculateTip()
         

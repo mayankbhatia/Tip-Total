@@ -12,6 +12,7 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet weak var defaultTipSegment: UISegmentedControl!
     
+    @IBOutlet weak var colorThemeSegment: UISegmentedControl!
     
     @IBAction func selectDefaultTip(_ sender: Any) {
         
@@ -21,11 +22,20 @@ class SettingsViewController: UIViewController {
 
     }
     
+    @IBAction func colorThemeChanged(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        defaults.set(colorThemeSegment.selectedSegmentIndex, forKey: "colorTheme")
+        defaults.synchronize()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let defaults = UserDefaults.standard
         defaultTipSegment.selectedSegmentIndex = defaults.integer(forKey: "tipIndex")
+        
+        colorThemeSegment.selectedSegmentIndex = defaults.integer(forKey: "colorTheme")
     }
 
     override func didReceiveMemoryWarning() {
