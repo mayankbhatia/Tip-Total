@@ -27,7 +27,7 @@ The following **additional** features are implemented:
 * [√] Make UI look like an actual receipt to include tip
 * [√] Include an icon for the app
 * [√] Dark/Light Settings Theme
-
+* [√] Split bill with guests
 
 ## Video Walkthrough 
 
