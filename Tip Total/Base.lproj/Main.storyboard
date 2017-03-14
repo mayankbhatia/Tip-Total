@@ -50,7 +50,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TIP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrc-XC-i9L">
-                                        <rect key="frame" x="20" y="29" width="108" height="30"/>
+                                        <rect key="frame" x="52" y="28" width="46" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GUESTS:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWb-q1-avD">
+                                        <rect key="frame" x="45" y="248" width="108" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="28"/>
                                         <nil key="textColor"/>
@@ -85,7 +92,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EG8-OV-oRT">
-                                        <rect key="frame" x="76" y="230" width="294" height="29"/>
+                                        <rect key="frame" x="76" y="198" width="294" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <segments>
                                             <segment title="15%"/>
@@ -96,6 +103,39 @@
                                             <action selector="percentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="F2j-Sf-TVF"/>
                                         </connections>
                                     </segmentedControl>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="4IY-L0-O39">
+                                        <rect key="frame" x="192" y="248" width="180" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="GuestCountSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="yr1-7y-R30"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxB-ua-xis">
+                                        <rect key="frame" x="145" y="253" width="35" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(Per Guest)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0XU-bx-orh">
+                                        <rect key="frame" x="58" y="59" width="122" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(Per Guest)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTc-2s-BUO">
+                                        <rect key="frame" x="58" y="149" width="122" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -122,6 +162,10 @@
                     <connections>
                         <outlet property="AmountField" destination="C1x-Id-Ved" id="3xb-6A-YRY"/>
                         <outlet property="AmountLabel" destination="DYi-yv-umF" id="1zc-ho-gmc"/>
+                        <outlet property="GuestCountLabel" destination="oxB-ua-xis" id="5KI-JS-7bO"/>
+                        <outlet property="GuestCountSlider" destination="4IY-L0-O39" id="i6d-yo-GJI"/>
+                        <outlet property="PerGuestLabel" destination="0XU-bx-orh" id="qeP-Mh-wmD"/>
+                        <outlet property="PerGuestLabel2" destination="YTc-2s-BUO" id="OHZ-yc-Ezh"/>
                         <outlet property="TipAmount" destination="bmK-et-cR4" id="mu3-6l-h49"/>
                         <outlet property="TipLabel" destination="xrc-XC-i9L" id="ZXd-PI-Ulc"/>
                         <outlet property="TipTotalView" destination="NF9-gs-rdW" id="iJ2-sK-QD1"/>
@@ -140,6 +184,11 @@
                         <outletCollection property="TipTotalCollection" destination="DYi-yv-umF" collectionClass="NSMutableArray" id="hSr-q7-pyl"/>
                         <outletCollection property="TipTotalCollection" destination="NF9-gs-rdW" collectionClass="NSMutableArray" id="Dqy-jV-XOW"/>
                         <outletCollection property="TipTotalCollection" destination="C1x-Id-Ved" collectionClass="NSMutableArray" id="6GH-XG-qL1"/>
+                        <outletCollection property="TipTotalCollection" destination="kWb-q1-avD" collectionClass="NSMutableArray" id="keA-X0-18l"/>
+                        <outletCollection property="TipTotalCollection" destination="oxB-ua-xis" collectionClass="NSMutableArray" id="c0m-bW-6hW"/>
+                        <outletCollection property="TipTotalCollection" destination="4IY-L0-O39" collectionClass="NSMutableArray" id="NV8-an-MVw"/>
+                        <outletCollection property="TipTotalCollection" destination="0XU-bx-orh" collectionClass="NSMutableArray" id="eLK-O6-uig"/>
+                        <outletCollection property="TipTotalCollection" destination="YTc-2s-BUO" collectionClass="NSMutableArray" id="zL2-dc-dWe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

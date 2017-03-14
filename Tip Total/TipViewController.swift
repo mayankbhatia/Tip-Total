@@ -17,6 +17,8 @@ class TipViewController: UIViewController {
     @IBOutlet weak var TipLabel: UILabel!
     @IBOutlet weak var TipAmount: UILabel!
     @IBOutlet weak var TipUnderlineLabel: UILabel!
+    @IBOutlet weak var PerGuestLabel: UILabel!
+    @IBOutlet weak var PerGuestLabel2: UILabel!
     
     
     @IBOutlet weak var TotalLabel: UILabel!
@@ -24,6 +26,9 @@ class TipViewController: UIViewController {
     @IBOutlet weak var TotalUnderlineLabel: UILabel!
     
     @IBOutlet weak var tipPercentSegment: UISegmentedControl!
+    
+    @IBOutlet weak var GuestCountLabel: UILabel!
+    @IBOutlet weak var GuestCountSlider: UISlider!
     
     @IBOutlet var TipTotalCollection: [UIView]!
     
@@ -41,9 +46,13 @@ class TipViewController: UIViewController {
         {
             let savedAmount = defaults.integer(forKey: "amount")
             
+            let guests = defaults.integer(forKey: "guests")
+            
             if (savedAmount > 0)
             {
                 AmountField.text = String(savedAmount)
+                GuestCountSlider.value = Float(guests)
+                GuestCountLabel.text = String(guests)
             }
             else
             {
@@ -213,9 +222,24 @@ class TipViewController: UIViewController {
             }
         }
         
+        let guests = Int(GuestCountLabel.text!)
+        
+        if (guests == 1)
+        {
+            PerGuestLabel.isHidden = true
+            PerGuestLabel2.isHidden = true
+            
+        }
+        else
+        {
+            PerGuestLabel.isHidden = false
+            PerGuestLabel2.isHidden = false
+            
+        }
+        
         let tipPercent = [15, 18, 20]
         
-        let tip = (amount * Double(tipPercent[tipPercentSegment.selectedSegmentIndex]))/100
+        let tip = ((amount * Double(tipPercent[tipPercentSegment.selectedSegmentIndex]))/100)/(Double(guests!))
         
         let tempNumber = tip as NSNumber
 
@@ -224,7 +248,8 @@ class TipViewController: UIViewController {
         currencyString = "\(formatter.string(from: tempNumber)!)"
         TipAmount.text = currencyString
         
-        let total = (amount + tip) as NSNumber
+        let totalNum = ((amount + tip)/Double(guests!))
+        let total =  totalNum as NSNumber
         currencyString = "\(formatter.string(from: total)!)"
         TotalAmount.text = currencyString
         
@@ -233,11 +258,22 @@ class TipViewController: UIViewController {
         //Save amount to load later
         
         let defaults = UserDefaults.standard
+        let date = NSDate()
+        defaults.set(date, forKey: "date")
         defaults.set(amount, forKey: "amount")
+        defaults.set(guests, forKey: "guests")
         defaults.synchronize()
 
         
     }
 
+    @IBAction func GuestCountSlider(_ sender: UISlider) {
+        
+        let guests = Int(sender.value)
+        
+               GuestCountLabel.text = String(guests)
+        calculateTip()
+        
+    }
 }
 
